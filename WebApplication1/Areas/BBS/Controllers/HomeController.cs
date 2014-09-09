@@ -8,14 +8,14 @@ using System.Web;
 using System.Web.Mvc;
 using Koo.Web.Areas.BBS.Models;
 using Koo.Web.Models;
-
 namespace Koo.Web.BBS.Controllers
+
 {
-    public class PostsController : Controller
+    public class HomeController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: BBS/Posts
+        // GET: BBS/Home
         public ActionResult Index()
         {
             return View(db.Posts.ToList());

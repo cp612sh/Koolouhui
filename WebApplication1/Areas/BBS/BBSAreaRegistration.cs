@@ -17,7 +17,8 @@ namespace Koo.Web.Areas.BBS
             context.MapRoute(
                 "BBS_default",
                 "BBS/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                new string[] { "Koo.Web.BBS.Controllers" }
             );
         }
     }

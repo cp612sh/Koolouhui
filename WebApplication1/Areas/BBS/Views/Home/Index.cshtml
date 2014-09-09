@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Koo.Web.Areas.BBS.Models.Post>
+
+<div class="example">
+    <div>
+        <canvas height="300"></canvas>
+    </div>
+</div>
+
+
+@foreach (Koo.Web.Areas.BBS.Models.Post item in Model)
+{
+    <h4>@item.Title</h4>
+    <textarea>@item.Content</textarea>
+}

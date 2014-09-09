@@ -173,6 +173,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\BBS\BBSAreaRegistration.cs" />
+    <Compile Include="Areas\BBS\Controllers\HomeController.cs" />
     <Compile Include="Areas\BBS\Models\Area.cs" />
     <Compile Include="Areas\BBS\Models\Post.cs" />
     <Compile Include="Areas\BBS\Controllers\PostsController.cs" />
@@ -455,6 +456,7 @@
     <Content Include="Areas\BBS\Views\Posts\Details.cshtml" />
     <Content Include="Areas\BBS\Views\Posts\Edit.cshtml" />
     <Content Include="Areas\BBS\Views\Posts\Index.cshtml" />
+    <Content Include="Areas\BBS\Views\Home\Index.cshtml" />
     <None Include="Properties\PublishProfiles\testing.pubxml" />
     <None Include="Properties\PublishProfiles\ttt.pubxml" />
     <None Include="Properties\PublishProfiles\测试.pubxml" />
@@ -544,9 +546,7 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Areas\BBS\Views\Home\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
