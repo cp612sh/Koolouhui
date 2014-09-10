@@ -1,0 +1,84 @@
+﻿@model Koo.Web.Areas.BBS.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="example">
+    <div>
+        <canvas height="200"></canvas>
+    </div>
+</div>
+
+@*<h2>Details</h2>*@
+
+@*<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+    </dl>
+</div>*@
+
+
+<div class="container">
+    <div >
+        <div class="grid">
+            <div class="row" style="margin-top:0px;">
+                <div class="span7">
+                    <div class="row" style="margin-top:0px">
+                        <div class="span1" style="grid-row-span: 2;">
+                            <span class="icon-pictures"></span>
+                        </div>
+                        <div class="span6" style="">
+                            <div>
+                                <label title="标题">@Model.Title</label>
+                            </div>
+                            <div>
+                                <label title="发贴人和时间">shayne发表于 @Model.CreateDate</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top:5px">
+                        <div class="example">
+                            @Model.Content
+                        </div>
+                    </div>
+                </div>
+                @*<div class="span4 bg-red">
+                    @Model.Content
+                </div>*@
+                @*<nav class="sidebar light fixed-top" style="width:100px;height:100px; text-align:right;vertical-align:top" >
+                    <ul class="fixed-top">
+                        <li class="fixed-top">
+                            @Model.Content
+                        </li>
+                    </ul>
+                </nav>*@
+            </div>
+        </div>
+        
+    </div>
+    <p>
+        @Html.ActionLink("Reply", "Home", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+</div>
+
+
+
+

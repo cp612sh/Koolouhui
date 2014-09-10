@@ -19,6 +19,8 @@ namespace Koo.Web.Areas.BBS.Models
 
         public int BrowseNum { get; set; }
 
+        public DateTime CreateDate { get; set; }
+
     }
 
 

@@ -51,6 +51,7 @@ namespace Koo.Web.BBS.Controllers
         {
             if (ModelState.IsValid)
             {
+                post.CreateDate = DateTime.Now;
                 db.Posts.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -175,6 +175,7 @@
     <Compile Include="Areas\BBS\BBSAreaRegistration.cs" />
     <Compile Include="Areas\BBS\Controllers\HomeController.cs" />
     <Compile Include="Areas\BBS\Models\Area.cs" />
+    <Compile Include="Areas\BBS\Models\PagingHelper.cs" />
     <Compile Include="Areas\BBS\Models\Post.cs" />
     <Compile Include="Areas\BBS\Controllers\PostsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -219,6 +220,10 @@
     <Compile Include="Migrations\201409100913475_userbasicinfo.cs" />
     <Compile Include="Migrations\201409100913475_userbasicinfo.Designer.cs">
       <DependentUpon>201409100913475_userbasicinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409100844533_createdate.cs" />
+    <Compile Include="Migrations\201409100844533_createdate.Designer.cs">
+      <DependentUpon>201409100844533_createdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -465,6 +470,7 @@
     <Content Include="Areas\BBS\Views\Posts\Edit.cshtml" />
     <Content Include="Areas\BBS\Views\Posts\Index.cshtml" />
     <Content Include="Areas\BBS\Views\Home\Index.cshtml" />
+    <Content Include="Areas\BBS\Views\Home\Details.cshtml" />
     <None Include="Properties\PublishProfiles\testing.pubxml" />
     <None Include="Properties\PublishProfiles\ttt.pubxml" />
     <None Include="Properties\PublishProfiles\测试.pubxml" />
@@ -551,6 +557,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201409100913475_userbasicinfo.resx">
       <DependentUpon>201409100913475_userbasicinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409100844533_createdate.resx">
+      <DependentUpon>201409100844533_createdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

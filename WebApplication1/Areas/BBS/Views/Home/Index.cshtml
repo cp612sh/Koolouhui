@@ -1,18 +1,80 @@
-﻿@model IEnumerable<Koo.Web.Areas.BBS.Models.Post>
+﻿@model Koo.Web.Areas.BBS.Models.PagingHelper<Koo.Web.Areas.BBS.Models.Post>
 
-<div class="example">
-    <div>
-        <canvas height="300"></canvas>
+    <div class="example">
+        <div>
+            <canvas height="300"></canvas>
+        </div>
     </div>
-</div>
 
 
-@foreach (Koo.Web.Areas.BBS.Models.Post item in Model)
-{
-    <h4>@item.Title</h4>
-    @*<textarea>@item.Content</textarea>*@
-    <div>
-        <label>@item.Content</label>
-        @*<label>@item.BrowseNum</label>*@
-    </div>
-}
+<table style="width:800px" class="text-center" align="center">
+    @foreach (var Data in Model.GetPagingData())
+    {
+        <tr>
+            <td style="width:40px" align="center" rowspan="2">
+                <span class="icon-pictures " style="height:30px;width:30px;text-align:center;align-content:center;glyph-orientation-horizontal:inherit"></span>
+            </td>
+            <td align="left">
+                @*<a href="~/home/Details/@Data.Id">@Data.Title</a>*@
+                <a href="@Url.Action("Details", "Home", new { id=Data.Id })">@Data.Title</a>
+            </td>
+            <td><label title="浏览数" class="text-right" style="padding-right:10px">@Data.BrowseNum</label></td>
+        </tr>
+        <tr style="height:0px">
+            <td align="left">
+                <span>
+                    <label title="发贴人和时间">shayne&nbsp;&nbsp;@Data.CreateDate</label>
+                </span>
+            </td>
+            <td><label title="回复数" class="text-right" style="padding-right:10px">1</label></td>
+        </tr>
+        <tr style="width:800px" class="text-center">
+            <td colspan="3" style="height:0px">
+                <hr class="bg-gray" />
+            </td>
+        </tr>
+    }
+    </table>
+<table style="width:800px" class="text-center" align="center">
+    <tr>
+        <td align="right">
+            <p>
+                @if (Model.HasPrev)
+                {
+                    int page=Model.PageIndex;
+                    <a href="@Url.Action("Index", "Home", new { pageIndex = Model.PageIndex - 1 })">《@page</a>
+                    
+                }
+                else if (Model.PageIndex==1)
+                {
+                    int page = Model.PageIndex;
+                    <em style="color:Gray">《@page</em>
+                }
+                @if (Model.HasNext)
+                {
+                    int page = Model.PageIndex + 1;
+                    <a href="@Url.Action("Index", "Home", new { pageIndex = Model.PageIndex + 1 })"> @page》</a>
+                }
+                else
+                {
+                    int page = Model.PageIndex + 1;
+                    <em style="color:Gray ">@page》</em>
+                }
+            </p>
+        </td>
+    </tr>
+</table>
+
+
+    @*@foreach (Koo.Web.Areas.BBS.Models.Post item in Model)
+    {
+        <h4>@item.Title</h4>
+      
+        <div>
+            <label>@item.Content</label>
+           
+        </div>
+    }*@
+
+   
+

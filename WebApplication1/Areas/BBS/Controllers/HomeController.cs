@@ -14,12 +14,35 @@ namespace Koo.Web.BBS.Controllers
     public class HomeController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        public static int defaultPageSize = 2;
 
-        // GET: BBS/Home
-        public ActionResult Index()
+        //// 传入 page 参数 ( 透过 Model Binder 绑进来的 )     
+        //public ActionResult Index(int? page)
+        //{
+        //    IQueryable<Post> posts =
+        //        from post in db.Posts
+        //        select post;
+
+        //    // 计算出目前要显示第几页的资料 ( 因为 page 为 Nullable<int> 型别 )     
+        //    int currentPageIndex = page.HasValue ? page.Value - 1 : 0;
+
+        //    // 透过 ToPagedList 这个 Extension Method 将原本的资料转成 IPagedList<T>     
+        //    return View(posts.ToPagedList(currentPageIndex, defaultPageSize));
+        //}    
+
+        public ActionResult Index(int pageIndex = 1)
         {
-            return View(db.Posts.ToList());
+            PagingHelper<Post> postPaging = new PagingHelper<Post>(2, db.Posts.ToList());//初始化分页器
+            postPaging.PageIndex = pageIndex;//指定当前页
+            return View(postPaging);//返回分页器实例到视图
         }
+
+
+        //// GET: BBS/Home
+        //public ActionResult Index()
+        //{
+        //    return View(db.Posts.ToList());
+        //}
 
         // GET: BBS/Posts/Details/5
         public ActionResult Details(int? id)
@@ -33,6 +56,11 @@ namespace Koo.Web.BBS.Controllers
             {
                 return HttpNotFound();
             }
+            else 
+            {
+                post.BrowseNum += 1;
+                db.SaveChanges();
+            }
             return View(post);
         }
 
@@ -40,6 +68,25 @@ namespace Koo.Web.BBS.Controllers
         public ActionResult Create()
         {
             return View();
+        }
+
+        public ActionResult Browser(int id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Post post = db.Posts.Find(id);
+            if (post == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                post.BrowseNum += 1;
+                db.SaveChanges();
+            }
+            return View(post);
         }
 
         // POST: BBS/Posts/Create
@@ -51,6 +98,7 @@ namespace Koo.Web.BBS.Controllers
         {
             if (ModelState.IsValid)
             {
+                post.CreateDate = DateTime.Now;
                 db.Posts.Add(post);
                 db.SaveChanges();
                 return RedirectToAction("Index");
