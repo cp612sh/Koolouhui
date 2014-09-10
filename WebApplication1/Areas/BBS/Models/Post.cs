@@ -17,6 +17,8 @@ namespace Koo.Web.Areas.BBS.Models
 
         public IList<Post> RepliedPosts { get; set; }
 
+        public int BrowseNum { get; set; }
+
     }
 
 

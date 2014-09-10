@@ -10,5 +10,9 @@
 @foreach (Koo.Web.Areas.BBS.Models.Post item in Model)
 {
     <h4>@item.Title</h4>
-    <textarea>@item.Content</textarea>
+    @*<textarea>@item.Content</textarea>*@
+    <div>
+        <label>@item.Content</label>
+        @*<label>@item.BrowseNum</label>*@
+    </div>
 }
