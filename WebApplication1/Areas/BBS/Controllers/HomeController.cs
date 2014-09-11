@@ -70,7 +70,7 @@ namespace Koo.Web.BBS.Controllers
             return View();
         }
 
-        public ActionResult Browser(int id)
+        public ActionResult Browser(int? id)
         {
             if (id == null)
             {
