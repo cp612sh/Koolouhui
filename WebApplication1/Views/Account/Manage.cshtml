@@ -9,14 +9,15 @@
         <h2>@ViewBag.Title。</h2><hr />
         <div class="tab-control" data-role="tab-control">
             <ul class="tabs">
-                <li class="active"><a href="#_page_1">密码修改</a></li>
+                <li class="active"><a href="#_page_4">系统通知</a></li>
+                <li><a href="#_page_1">密码修改</a></li>
                 <li><a href="#_page_3">基本资料</a></li>
+                <li><a href="#_page_2">订单管理</a></li>
             </ul>
 
             <div class="frames">
                 <div class="frame" id="_page_1">
                     <div class="row">
-                        <p class="text-success">@ViewBag.StatusMessage</p>
                         <div class="col-md-12">
                             @if (ViewBag.HasLocalPassword)
                             {
@@ -34,14 +35,12 @@
                         </div>
                     </div>
                 </div>
-                @*<div class="frame" id="_page_2">
-                <div class="input-control textarea">
-                    <textarea>...</textarea>
+                <div class="frame" id="_page_2">
+
+                    <hr />
                 </div>
-                <div class="place-right">请 <a href="#">登录</a> 后评论</div>
-                <hr />
-            </div>*@
-                <div class="frame" id="_page_3">...</div>
+                <div class="frame" id="_page_3"></div>
+                <div class="frame" id="_page_4"></div>
             </div>
         </div>
     </div>
