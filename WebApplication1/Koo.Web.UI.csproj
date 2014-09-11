@@ -225,6 +225,10 @@
     <Compile Include="Migrations\201409100844533_createdate.Designer.cs">
       <DependentUpon>201409100844533_createdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201409110547085_createdate1.cs" />
+    <Compile Include="Migrations\201409110547085_createdate1.Designer.cs">
+      <DependentUpon>201409110547085_createdate1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -560,6 +564,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201409100844533_createdate.resx">
       <DependentUpon>201409100844533_createdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409110547085_createdate1.resx">
+      <DependentUpon>201409110547085_createdate1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
