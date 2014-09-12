@@ -9,15 +9,14 @@
 
             <li>
                 <a href="/Account/Manage" title="用户中心" class="element place-right" style="height:65px">
-                    <img 
-                         alt="" 
-                         src="~/images/excel2013icon.png" width="35" height="35" 
-                         data-src="js/holder/holder.js/35x35" 
-                         class="rounded">
+                    <span class="icon-user"></span>
                     <span>@User.Identity.GetUserName()</span>
                 </a>
             </li>
-            <li><a class="element" style="height:65px" href="javascript:document.getElementById('logoutForm').submit()">注销</a></li>
+            <li><a class="element" style="height:65px" href="javascript:document.getElementById('logoutForm').submit()">
+                <span class="icon-switch"></span>
+                <span>注销</span>
+                </a></li>
         </ul>
     }
 }
