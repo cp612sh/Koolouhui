@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Koo.Web.Areas.BBS.Models;
 using Koo.Web.Models;
+using Koo.Web.UI.Controls;
 namespace Koo.Web.BBS.Controllers
 
 {
@@ -32,9 +33,10 @@ namespace Koo.Web.BBS.Controllers
 
         public ActionResult Index(int pageIndex = 1)
         {
-            PagingHelper<Post> postPaging = new PagingHelper<Post>(2, db.Posts.ToList());//初始化分页器
-            postPaging.PageIndex = pageIndex;//指定当前页
-            return View(postPaging);//返回分页器实例到视图
+            var model = db.Posts
+                .OrderByDescending(a => a.CreateDate)
+                .ToPagedList(pageIndex, defaultPageSize);
+            return View(model);
         }
 
 

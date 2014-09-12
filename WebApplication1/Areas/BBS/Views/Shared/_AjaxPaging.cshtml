@@ -1,0 +1,9 @@
+﻿@using Koo.Web.UI.Controls
+@model Koo.Web.UI.Controls.PagedList<Koo.Web.Areas.BBS.Models.Post>
+
+
+@Ajax.Pager(Model, new PagerOptions { PageIndexParameterName = "pageIndex", ShowPageIndexBox = true, PageIndexBoxType = PageIndexBoxType.DropDownList, ShowGoButton = false }, new MvcAjaxOptions { UpdateTargetId = "PostsList", EnablePartialLoading = true })
+
+@*@Ajax.Pager(Model, new PagerOptions { PageIndexParameterName = "pageIndex" }, new MvcAjaxOptions { UpdateTargetId = "PostsList" })*@
+
+@section Scripts{@{Html.RegisterMvcPagerScriptResource();}}

@@ -533,6 +533,7 @@
     <Content Include="Views\Orders\Edit.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
     <Content Include="Views\Projects\Seeding.cshtml" />
+    <Content Include="Areas\BBS\Views\Shared\_AjaxPaging.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201408040615002_supportamount.resx">

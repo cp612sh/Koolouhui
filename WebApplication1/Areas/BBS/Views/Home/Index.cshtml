@@ -1,4 +1,5 @@
-﻿@model Koo.Web.Areas.BBS.Models.PagingHelper<Koo.Web.Areas.BBS.Models.Post>
+﻿@using Koo.Web.UI.Controls
+    @model PagedList<Koo.Web.Areas.BBS.Models.Post>
 
     <div class="example">
         <div>
@@ -6,16 +7,15 @@
         </div>
     </div>
 
-
-<table style="width:800px" class="text-center" align="center">
-    @foreach (var Data in Model.GetPagingData())
-    {
+    <div id="PostsList">
+        <table style="width:800px" class="text-center" align="center">
+            @foreach (var Data in Model)
+        {
         <tr>
             <td style="width:40px" align="center" rowspan="2">
                 <span class="icon-pictures " style="height:30px;width:30px;text-align:center;align-content:center;glyph-orientation-horizontal:inherit"></span>
             </td>
             <td align="left">
-                @*<a href="~/home/Details/@Data.Id">@Data.Title</a>*@
                 <a href="@Url.Action("Details", "Home", new { id=Data.Id })">@Data.Title</a>
             </td>
             <td><label title="浏览数" class="text-right" style="padding-right:10px">@Data.BrowseNum</label></td>
@@ -33,48 +33,15 @@
                 <hr class="bg-gray" />
             </td>
         </tr>
-    }
-    </table>
-<table style="width:800px" class="text-center" align="center">
-    <tr>
-        <td align="right">
-            <p>
-                @if (Model.HasPrev)
-                {
-                    int page=Model.PageIndex;
-                    <a href="@Url.Action("Index", "Home", new { pageIndex = Model.PageIndex - 1 })">《@page</a>
-                    
-                }
-                else if (Model.PageIndex==1)
-                {
-                    int page = Model.PageIndex;
-                    <em style="color:Gray">《@page</em>
-                }
-                @if (Model.HasNext)
-                {
-                    int page = Model.PageIndex + 1;
-                    <a href="@Url.Action("Index", "Home", new { pageIndex = Model.PageIndex + 1 })"> @page》</a>
-                }
-                else
-                {
-                    int page = Model.PageIndex + 1;
-                    <em style="color:Gray ">@page》</em>
-                }
-            </p>
-        </td>
-    </tr>
-</table>
-
-
-    @*@foreach (Koo.Web.Areas.BBS.Models.Post item in Model)
-    {
-        <h4>@item.Title</h4>
-      
-        <div>
-            <label>@item.Content</label>
-           
+        }
+        </table>
+        <div class="text-center">
+            @Ajax.Pager(Model, new PagerOptions { PageIndexParameterName = "pageIndex"}, 
+            new MvcAjaxOptions { UpdateTargetId = "PostsList", EnablePartialLoading = true })
         </div>
-    }*@
+    </div>
+    @section Scripts{@{Html.RegisterMvcPagerScriptResource();}}
 
-   
+
+
 
