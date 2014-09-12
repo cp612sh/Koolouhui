@@ -1,7 +1,5 @@
 ﻿namespace Koo.Web.UI.Controls
 {
-    using System;
-    using System.Runtime.CompilerServices;
     using System.Web.Mvc;
     using System.Web.UI;
 
