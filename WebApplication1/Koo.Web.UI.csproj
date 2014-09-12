@@ -248,7 +248,6 @@
     <Content Include="css\metro-bootstrap-responsive.min.css" />
     <Content Include="css\metro-bootstrap.css" />
     <Content Include="css\metro-bootstrap.min.css" />
-    <Content Include="faviconbak.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\iconFont.dev.svg" />
     <Content Include="fonts\iconFont.svg" />
