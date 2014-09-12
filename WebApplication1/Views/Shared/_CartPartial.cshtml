@@ -1,9 +1,0 @@
-﻿@if (HttpContext.Current.Session["CurrentCart"] != null)
-{
-    var count = ((List<Koo.Web.Models.CartItem>)HttpContext.Current.Session["CurrentCart"]).Count.ToString();
-    <a class="fg-white" href="~/Cart" id="cart"><i class="icon-cart-2"></i> (@count)</a>
-}
-else
-{
-    <a class="fg-white" href="~/Cart" id="cart"><i class="icon-cart-2"></i> (0)</a>
-}

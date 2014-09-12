@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koo.Web.UI", "WebApplication1\Koo.Web.UI.csproj", "{ACFFA15A-376D-4A54-975A-DEA7B3026B28}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Koo.Web.Components", "Koo.Web.Components", "{6FBD3DF0-41A2-42DC-8FD7-66D2BA39EB33}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcPager", "MvcPager\MvcPager.csproj", "{C9CA6BB5-F0F6-4B03-8E4C-CB0583B846A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Koo.Web.UI", "Koo.Web\Koo.Web.UI.csproj", "{ACFFA15A-376D-4A54-975A-DEA7B3026B28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,16 +19,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Release|x86.ActiveCfg = Release|Any CPU
 		{C9CA6BB5-F0F6-4B03-8E4C-CB0583B846A8}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{C9CA6BB5-F0F6-4B03-8E4C-CB0583B846A8}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{C9CA6BB5-F0F6-4B03-8E4C-CB0583B846A8}.Debug|Mixed Platforms.Build.0 = Debug|x86
@@ -39,6 +29,16 @@ Global
 		{C9CA6BB5-F0F6-4B03-8E4C-CB0583B846A8}.Release|Mixed Platforms.Build.0 = Release|x86
 		{C9CA6BB5-F0F6-4B03-8E4C-CB0583B846A8}.Release|x86.ActiveCfg = Release|x86
 		{C9CA6BB5-F0F6-4B03-8E4C-CB0583B846A8}.Release|x86.Build.0 = Release|x86
+		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{ACFFA15A-376D-4A54-975A-DEA7B3026B28}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
