@@ -243,7 +243,6 @@
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="2014072401.html" />
     <Content Include="css\iconFont.min.css" />
     <Content Include="css\metro-bootstrap-responsive.css" />
     <Content Include="css\metro-bootstrap-responsive.min.css" />
